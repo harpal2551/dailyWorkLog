@@ -1,0 +1,123 @@
+body {
+  font-family: Arial;
+  margin: 0;
+  background: #0f172a;
+  color: #e2e8f0;
+  /* overflow: hidden; */
+}
+
+/* Chrome, Edge, Safari */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+/* Firefox */
+html, body {
+  scrollbar-width: none;
+  -ms-overflow-style: none; /* IE/Edge old */
+}
+
+nav {
+  background: linear-gradient(90deg, #1e293b, #334155);
+  color: white;
+  text-align: center;
+  padding:  5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* 👇 full height layout */
+.container {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+  height: calc(88vh - 80px);
+}
+
+.left, .right {
+  flex: 1;
+  background: #1e293b;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  width: 100%;
+  min-height: 100px;
+  resize: none;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  background: #0f172a;
+  color: white;
+}
+
+.time-input {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+input {
+  padding: 6px;
+  border-radius: 6px;
+  border: none;
+  background: #0f172a;
+  color: white;
+}
+
+button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+.left button:nth-of-type(1) {
+  background: #22c55e;
+  color: white;
+}
+
+.left button:nth-of-type(2) {
+  background: #ef4444;
+  color: white;
+}
+
+/* 👇 scroll only here */
+#output {
+  flex: 1;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  color: #e2e8f0;
+  padding-right: 5px;
+}
+
+/* 👇 bottom fixed */
+.bottom {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#total {
+  background: #3b82f6;
+  color: white;
+}
+
+.bottom button:last-child {
+  background: #ef4444;
+  color: white;
+}

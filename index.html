@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DailyWork Log - Track Your Daily Work Hours Easily</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.png">
+    <title>DailyWork Log - Track Your Daily Work Hours Easily</title>
+
+    <meta name="description"
+        content="DailyWork Log is a simple tool to track your daily work hours, tasks, and productivity in minutes and hours.">
+
+    <meta name="keywords" content="work tracker, daily work log, time tracker, productivity tool">
+
+    <meta name="author" content="Sahil">
+
+    <!-- 👇 image preview (important) -->
+    <meta property="og:title" content="DailyWork Log">
+    <meta property="og:description" content="Track your daily work hours easily">
+    <meta property="og:image" content="https://yoursite.com/logo.png">
+    <meta property="og:type" content="website">
+</head>
+
+<body>
+
+    <nav>
+        <h1>Daily Work Hours Counter ⏱️</h1>
+    </nav>
+
+    <div class="container">
+
+        <!-- LEFT -->
+        <div class="left">
+            <textarea id="workText" placeholder="Work details..."></textarea>
+
+            <div class="time-input">
+                <input type="time" id="startTime">
+                <span>TO</span>
+                <input type="time" id="endTime">
+            </div>
+
+            <button onclick="addWork()">Add Work</button>
+            <button onclick="clearAll()">Clear</button>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="right">
+            <div id="output"></div>
+
+            <div class="bottom">
+                <button id="total">Total: 0 mins</button>
+                <button onclick="deleteAll()">Delete</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
