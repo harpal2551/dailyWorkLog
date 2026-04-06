@@ -1,7 +1,16 @@
 let totalMinutes = 0;
 
-function getMinutes(time) {
+function getMinutes(time, ampm) {
   let [hours, minutes] = time.split(":").map(Number);
+
+  // convert to 24-hour format
+  if (ampm === "PM" && hours !== 12) {
+    hours += 12;
+  }
+  if (ampm === "AM" && hours === 12) {
+    hours = 0;
+  }
+
   return hours * 60 + minutes;
 }
 
@@ -10,13 +19,16 @@ function addWork() {
   let startTime = document.getElementById("startTime").value;
   let endTime = document.getElementById("endTime").value;
 
+  let startAmPm = document.getElementById("startAmPm").value;
+  let endAmPm = document.getElementById("endAmPm").value;
+
   if (!text || !startTime || !endTime) {
     alert("Please fill all fields!");
     return;
   }
 
-  let start = getMinutes(startTime);
-  let end = getMinutes(endTime);
+  let start = getMinutes(startTime, startAmPm);
+  let end = getMinutes(endTime, endAmPm);
 
   let diff = end - start;
 
@@ -48,7 +60,6 @@ function addWork() {
   document.getElementById("startTime").value = "";
   document.getElementById("endTime").value = "";
 
-  // 👇 auto scroll bottom
   output.scrollTop = output.scrollHeight;
 }
 
